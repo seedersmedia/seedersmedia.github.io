@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html class="html" lang="en-GB">
+<head><meta charset="UTF-8">
+<script data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer>var __ez=__ez||{};__ez.stms=Date.now();__ez.evt={};__ez.script={};__ez.ck=__ez.ck||{};__ez.template={};__ez.template.isOrig=true;__ez.queue=(function(){var count=0,incr=0,items=[],timeDelayFired=false,hpItems=[],lpItems=[],allowLoad=true;var obj={func:function(name,funcName,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError){var self=this;this.name=name;this.funcName=funcName;this.parameters=parameters===null?null:(parameters instanceof Array)?parameters:[parameters];this.isBlock=isBlock;this.blockedBy=blockedBy;this.deleteWhenComplete=deleteWhenComplete;this.isError=false;this.isComplete=false;this.isInitialized=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){log("... func = "+name);self.isInitialized=true;self.isComplete=true;log("... func.apply: "+name);var funcs=self.funcName.split('.');var func=null;if(funcs.length>3){}else if(funcs.length===3){func=window[funcs[0]][funcs[1]][funcs[2]];}else if(funcs.length===2){func=window[funcs[0]][funcs[1]];}else{func=window[self.funcName];}
+if(typeof func!=='undefined'&&func!==null){func.apply(null,this.parameters);}
+if(self.deleteWhenComplete===true)delete items[name];if(self.isBlock===true){log("----- F'D: "+self.name);processAll();}}},file:function(name,path,isBlock,blockedBy,async,defer,proceedIfError){var self=this;this.name=name;this.path=path;this.async=async;this.defer=defer;this.isBlock=isBlock;this.blockedBy=blockedBy;this.isInitialized=false;this.isError=false;this.isComplete=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){self.isInitialized=true;log("... file = "+name);var scr=document.createElement('script');scr.src=path;if(async===true)scr.async=true;else if(defer===true)scr.defer=true;scr.onerror=function(){log("----- ERR'D: "+self.name);self.isError=true;if(self.isBlock===true){processAll();}};scr.onreadystatechange=scr.onload=function(){var state=scr.readyState;log("----- F'D: "+self.name);if((!state||/loaded|complete/.test(state))){self.isComplete=true;if(self.isBlock===true){processAll();}}};document.getElementsByTagName('head')[0].appendChild(scr);}}};function init(){window.addEventListener("load",function(){setTimeout(function(){timeDelayFired=true;log('TDELAY -----');processAll();},5000);},false);}
+function addFile(name,path,isBlock,blockedBy,async,defer,proceedIfError,priority){var item=new obj.file(name,path,isBlock,blockedBy,async,defer,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
+items[name]=item;checkIfBlocked(item);}
+function setallowLoad(settobool){allowLoad=settobool}
+function addFunc(name,func,parameters,isBlock,blockedBy,autoInc,deleteWhenComplete,proceedIfError,priority){if(autoInc===true)name=name+"_"+incr++;var item=new obj.func(name,func,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
+items[name]=item;checkIfBlocked(item);}
+function addTimeDelayFile(name,path){var item=new obj.file(name,path,false,[],false,false,true);item.isTimeDelay=true;log(name+' ... '+' FILE! TDELAY');lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
+function addTimeDelayFunc(name,func,parameters){var item=new obj.func(name,func,parameters,false,[],true,true);item.isTimeDelay=true;log(name+' ... '+' FUNCTION! TDELAY');lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
+function checkIfBlocked(item){if(isBlocked(item)===true||allowLoad==false)return;item.process();}
+function isBlocked(item){if(item.isTimeDelay===true&&timeDelayFired===false){log(item.name+" blocked = TIME DELAY!");return true;}
+if(item.blockedBy instanceof Array){for(var i=0;i<item.blockedBy.length;i++){var block=item.blockedBy[i];if(items.hasOwnProperty(block)===false){log(item.name+" blocked = "+block);return true;}else if(item.proceedIfError===true&&items[block].isError===true){return false;}else if(items[block].isComplete===false){log(item.name+" blocked = "+block);return true;}}}
+return false;}
+function log(msg){var href=window.location.href;var reg=new RegExp('[?&]ezq=([^&#]*)','i');var string=reg.exec(href);var res=string?string[1]:null;if(res==="1")console.debug(msg);}
+function processAll(){count++;if(count>200)return;log("let's go");processItems(hpItems);processItems(lpItems);}
+function processItems(list){for(var i in list){if(list.hasOwnProperty(i)===false)continue;var item=list[i];if(item.isComplete===true||isBlocked(item)||item.isInitialized===true||item.isError===true){if(item.isError===true){log(item.name+': error')}else if(item.isComplete===true){log(item.name+': complete already')}else if(item.isInitialized===true){log(item.name+': initialized already')}}else{item.process();}}}
+init();return{addFile:addFile,addDelayFile:addTimeDelayFile,addFunc:addFunc,addDelayFunc:addTimeDelayFunc,items:items,processAll:processAll,setallowLoad:setallowLoad};})();__ez.evt.add=function(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n()},__ez.evt.remove=function(e,t,n){e.removeEventListener?e.removeEventListener(t,n,!1):e.detachEvent?e.detachEvent("on"+t,n):delete e["on"+t]};__ez.script.add=function(e){var t=document.createElement("script");t.src=e,t.async=!0,t.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(t)};__ez.queue.addFile('/detroitchicago/boise.js', '//ezodn.com/detroitchicago/boise.js?gcb=188-0&cb=1', false, [], true, false, true, false);__ez.dot={};__ez.queue.addFile('/detroitchicago/memphis.js', '//ezodn.com/detroitchicago/memphis.js?gcb=188-0&cb=1', false, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/minneapolis.js', '//ezodn.com/detroitchicago/minneapolis.js?gcb=188-0&cb=1', false, [], true, false, true, false);</script><script data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer>__ez.pel=(function(){var pixels=[],pxURL="/porpoiseant/army.gif";function AddAndFirePixel(adSlot,pixelData){AddPixel(adSlot,pixelData,0,0,0,0,0);Fire();}
+function GetCurrentPixels(){return pixels;}
+function AddPixel(adSlot,pixelData,revenue,est_revenue,bid_floor_filled,bid_floor_prev,stat_source_id){if(!__ez.dot.isDefined(adSlot)||__ez.dot.isAnyDefined(adSlot.getSlotElementId,adSlot.ElementId)==false){return;}
+var ad_position_id=parseInt(__ez.dot.getTargeting(adSlot,'ap'));var impId=__ez.dot.getSlotIID(adSlot),adUnit=__ez.dot.getAdUnit(adSlot);var compId=parseInt(__ez.dot.getTargeting(adSlot,"compid"));var lineItemId=0;var creativeId=0;var ezimData=getEzimData(adSlot);if(typeof ezimData=='object'){if(ezimData.creative_id!==undefined){creativeId=ezimData.creative_id;}
+if(ezimData.line_item_id!==undefined){lineItemId=ezimData.line_item_id;}}
+if(__ez.dot.isDefined(impId,adUnit)&&__ez.dot.isValid(pixelData)){pixels.push({type:"impression",impression_id:impId,domain_id:__ez.dot.getDID(),unit:adUnit,t_epoch:__ez.dot.getEpoch(0),revenue:revenue,est_revenue:est_revenue,ad_position:ad_position_id,ad_size:"",bid_floor_filled:bid_floor_filled,bid_floor_prev:bid_floor_prev,stat_source_id:stat_source_id,country_code:__ez.dot.getCC(),pageview_id:__ez.dot.getPageviewId(),comp_id:compId,line_item_id:lineItemId,creative_id:creativeId,data:__ez.dot.dataToStr(pixelData)});}}
+function AddPixelById(impFullId,pixelData){var vals=impFullId.split('/');if(__ez.dot.isDefined(impFullId)&&vals.length===3&&__ez.dot.isValid(pixelData)){var adUnit=vals[0],impId=vals[2];pixels.push({type:"impression",impression_id:impId,domain_id:__ez.dot.getDID(),unit:adUnit,t_epoch:__ez.dot.getEpoch(0),pageview_id:__ez.dot.getPageviewId(),data:__ez.dot.dataToStr(pixelData)});}}
+function Fire(){if(typeof document.visibilityState!=='undefined'&&document.visibilityState==="prerender")return;if(__ez.dot.isDefined(pixels)&&pixels.length>0){var pixelURL=__ez.dot.getURL(pxURL)+"?orig="+(__ez.template.isOrig===true?1:0)+"&sts="+btoa(JSON.stringify(pixels));if(typeof window.isAmp!=='undefined'&&isAmp&&typeof window._ezaq!=='undefined'&&_ezaq.hasOwnProperty("domain_id")){pixelURL+="&visit_uuid="+_ezaq['visit_uuid'];}
+(new Image()).src=pixelURL;}
+pixels=[];}
+function getEzimData(adSlot){if(typeof _ezim_d=="undefined"){return false}
+var adUnitName=__ez.dot.getAdUnitPath(adSlot).split('/').pop();if(typeof _ezim_d==='object'&&_ezim_d.hasOwnProperty(adUnitName)){return _ezim_d[adUnitName];}
+for(var ezimKey in _ezim_d){if(ezimKey.split('/').pop()===adUnitName){return _ezim_d[ezimKey];}}
+return false;}
+return{Add:AddPixel,AddAndFire:AddAndFirePixel,AddById:AddPixelById,Fire:Fire,GetPixels:GetCurrentPixels,};})();__ez.queue.addFile('/detroitchicago/raleigh.js', '//ezodn.com/detroitchicago/raleigh.js?gcb=188-0&cb=1', false, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/tampa.js', '//ezodn.com/detroitchicago/tampa.js?gcb=188-0&cb=1', false, [], true, false, true, false);</script>
+<script>__ez.queue.addFile('/detroitchicago/anaheim.js', '//ezodn.com/detroitchicago/anaheim.js?gcb=0&cb=1', false, ['/detroitchicago/minneapolis.js'], true, false, true, false);</script>
+<script data-ezscrex="false" data-cfasync="false">(function(){if("function"===typeof window.CustomEvent)return!1;window.CustomEvent=function(c,a){a=a||{bubbles:!1,cancelable:!1,detail:null};var b=document.createEvent("CustomEvent");b.initCustomEvent(c,a.bubbles,a.cancelable,a.detail);return b}})();</script><script data-ezscrex="false" data-cfasync="false">window["requestIdleCallback"]=window["requestIdleCallback"]||function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:false,timeRemaining:function(){return Math.max(0,50-(Date.now()-start));}});},1);};(function(){const iterations=50;const multiplier=1000000000;function calculatePrimes(iterations,multiplier){var primes=[];for(var i=0;i<iterations;i++){var candidate=i*(multiplier*Math.random());var isPrime=true;for(var c=2;c<=Math.sqrt(candidate);++c){if(candidate%c===0){isPrime=false;break;}}
+if(isPrime){primes.push(candidate);}}
+return primes;}
+function Person(){var self=this;self.age=0;setInterval(function growUp(){self.age++;},1000);}
+if(window["ihajsdjhsadhjk"]=="1"){var jkljk=new Person();calculatePrimes(6,jkljk);window["ihajsdjhsadhjk"]=null;window["doezifk"]="1";}
+function doPointlessComputationsWithBlocking(){var primes=calculatePrimes(iterations,multiplier);pointlessComputationsButton.disabled=false;}
+if(window["doezifk"]=="1"){doPointlessComputationsWithBlocking();window["doezifk"]=null;window["ihajsdjhsadhjk"]="1";}
+if(typeof window['EzoIvent']==="function")return false;function EzoIvent(event,params){params=params||{bubbles:false,cancelable:false,detail:null};var evt=document.createEvent('EzoIvent');evt.initCustomEvent(event,params.bubbles,params.cancelable,params.detail);return evt;}
+window['EzoIvent']=EzoIvent;})();__ez.nap=Array();__ez.nap[0]=0;__ez.nap[1]=45;__ez.nap[2]=[];__ez.nap[3]=0;__ez.nap[4]=1;__ez.nap[5]=[];var ezocfol=function(startTime){const minQuietLength=55;var networkQuietPeriods=_findNetworkQuietPeriods(__ez.nap[2],window["ezodomstart"],startTime);var cpuQuietPeriods=__ez.nap[5];var quietPeriods=_findOverlappingQuietPeriods(networkQuietPeriods,cpuQuietPeriods);if(typeof quietPeriods!="undefined"){var numQuiets=0;var lastQuietPeriodEnd=Math.max(quietPeriods[quietPeriods.length-1].cpuQuietPeriod.end,quietPeriods[quietPeriods.length-1].cpuQuietPeriod.end);quietPeriods.forEach(quietPeriod=>{numQuiets=numQuiets+Math.floor(quietPeriod.quietPeriodLength/minQuietLength);});if((numQuiets>=__ez["sswp"]&&numQuiets>1)||numQuiets>=10||lastQuietPeriodEnd<Date.now()-5000){clearInterval(window["ezoIint"]);}
+__ez.nap[0]=numQuiets;window.dispatchEvent(new CustomEvent('EzoIvent',{detail:[__ez.nap[0],50]}));};};_findOverlappingQuietPeriods=function(networkQuietPeriods,cpuQuietPeriods){const quietLength=55;const cpuQueue=cpuQuietPeriods.slice();const networkQueue=networkQuietPeriods.slice();let cpuCandidate=cpuQueue.shift();let networkCandidate=networkQueue.shift();var overlappingPeriods=[];cpuQueue.forEach(cpuCandidate=>{networkQueue.forEach(networkCandidate=>{if(cpuCandidate.start>=networkCandidate.start){if(networkCandidate.end>=cpuCandidate.start+quietLength){overlappingPeriods.push({cpuQuietPeriod:cpuCandidate,networkQuietPeriod:networkCandidate,cpuQuietPeriods,networkQuietPeriods,quietPeriodLength:Math.min(cpuCandidate.duration,networkCandidate.duration),});}}else{if(cpuCandidate.end>=networkCandidate.start+quietLength){overlappingPeriods.push({cpuQuietPeriod:cpuCandidate,networkQuietPeriod:networkCandidate,cpuQuietPeriods,networkQuietPeriods,quietPeriodLength:Math.min(cpuCandidate.duration,networkCandidate.duration),});}}})})
+if(overlappingPeriods.length>0){return overlappingPeriods;}
+const culprit=cpuCandidate?'Network':'Main thread';};var netStartTime=0;_findNetworkQuietPeriods=function(networkRecords,traceOfTab,endTime){if(netStartTime==0){netStartTime=traceOfTab-1;}
+var traceEndTsInMs=traceOfTab;var timeBoundaries=[];for(var recordKey in networkRecords){var record=networkRecords[recordKey];if(record.end<0){record.end=99;}
+timeBoundaries.push({time:record.start,isStart:true});if(record.end>0){timeBoundaries.push({time:record.end,isStart:false});}}
+timeBoundaries.sort((a,b)=>a.time-b.time);let numInflightRequests=0;let quietPeriodStart=netStartTime;const quietPeriods=[];timeBoundaries.forEach(boundary=>{if(boundary.isStart){if(numInflightRequests===__ez.nap[4]){quietPeriods.push({start:quietPeriodStart,end:boundary.time,duration:boundary.time-quietPeriodStart});}
+numInflightRequests++;}else{numInflightRequests--;if(numInflightRequests===__ez.nap[4]){quietPeriodStart=boundary.time;}}});if(numInflightRequests<=__ez.nap[4]){quietPeriods.push({start:quietPeriodStart,end:endTime,duration:endTime-quietPeriodStart});}
+return quietPeriods;};function hashCode(s){let h;for(let i=0;i<s.length;i++)
+h=Math.imul(31,h)+s.charCodeAt(i)|0;return h;}
+var ezogetrqbykey=function(id){for(var i=0,iLen=__ez.nap[2].length;i<iLen;i++){if(__ez.nap[2][i].id==id)return i;}};var ezorqs=function(e,id){indexKey=window["ezogetrqbykey"](id);if(typeof(indexKey)=="undefined"){__ez.nap[2].push({'start':Date.now(),'end':-1,'id':id});__ez.nap[3]++;setTimeout(function(){window["ezorqe"](e,id)},2000);}};var ezorqe=function(e,id,force){indexKey=window["ezogetrqbykey"](id);if(typeof(indexKey)!="undefined"&&__ez.nap[2][indexKey].end==-1){__ez.nap[2][indexKey].end=Date.now();__ez.nap[3]--;}else if(force==true){__ez.nap[3]--;}};(function(){if(typeof window["__ez"]["ssaf"]!="undefined"&&window["__ez"]["ssaf"].indexOf(19)>-1){var originalSetInterval=window.setInterval;window.setInterval=function(fn,time){var nTime=time;if(nTime<90&&nTime!=56){nTime=90;}
+if(arguments.length<3){return originalSetInterval(fn,nTime);}
+var args=Array.prototype.slice.call(arguments).slice(2);return originalSetInterval(fn.bind(window,args),nTime)};}}());(function(){if(typeof window["__ez"]["ssaf"]!="undefined"&&window["__ez"]["ssaf"].indexOf(19)>-1){var originalSetTimeout=window.setTimeout;window.setTimeout=function(fn,time){var nTime=time;if(nTime<90){nTime=90;}
+if(arguments.length<3){return originalSetTimeout(fn,nTime);}
+var oThis=this,aArgs=Array.prototype.slice.call(arguments,2);return originalSetTimeout(fn instanceof Function?function(){fn.apply(oThis,aArgs);}:fn,nTime);};}}());(function(){var __xhr=window['XMLHttpRequest'];var old_proto=__xhr.prototype;var XMLHttpRequest=function(){var xhr=new __xhr;if(typeof(this.open)!="undefined"){xhr.open=this.open;}else{this.open=__xhr.open;}
+if(typeof(this.abort)!="undefined"){xhr.abort=this.abort;}else{this.open=__xhr.open;}
+if(typeof(this.getAllResponseHeaders)!="undefined"){xhr.getAllResponseHeaders=this.getAllResponseHeaders;}else{this.getAllResponseHeaders=__xhr.getAllResponseHeaders;}
+if(typeof(this.getResponseHeader)!="undefined"){xhr.getResponseHeader=this.getResponseHeader;}else{this.getResponseHeader=__xhr.getResponseHeader;}
+if(typeof(this.overrideMimeType)!="undefined"){xhr.overrideMimeType=this.overrideMimeType;}else{this.overrideMimeType=__xhr.overrideMimeType;}
+if(typeof(this.setRequestHeader)!="undefined"){xhr.setRequestHeader=this.setRequestHeader;}else{this.setRequestHeader=__xhr.setRequestHeader;}
+var id=Math.random();xhr.addEventListener('loadstart',function(e){window["ezorqs"](e,id);});xhr.addEventListener('loadend',function(e){window["ezorqe"](e,id);});xhr.addEventListener('error',function(e){window["ezorqe"](e,id);});xhr.addEventListener('abort',function(e){window["ezorqe"](e,id);});return xhr;};XMLHttpRequest.prototype=old_proto;for(var k in __xhr){XMLHttpRequest[k]=__xhr[k];}
+window['XMLHttpRequest']=XMLHttpRequest;}());window["ezoFetchConst"]=window.fetch;window.fetch=function(e){var id=Math.random();window["ezorqs"](e,id);return new Promise((resolve,reject)=>{window["ezoFetchConst"].apply(this,arguments).then((response)=>{window["ezorqe"](response,id);resolve(response);}).catch((error)=>{window["ezorqe"](error,id);reject(error);})});};var _fEzDt=function(){return Date.now();};document.addEventListener("DOMContentLoaded",function(){window["ezodomstart"]=Date.now();if('requestIdleCallback'in window){var __lioc="orient";var __idle_start=0;window["ezoIint"]=setInterval(function(){window.requestIdleCallback(function(a){var start=Date.now();var tr=a.timeRemaining();var _ftrf=_fEzDt();if(tr<_ftrf){if(tr>__ez.nap[1]){if(__idle_start==0){__idle_start=start;}}else if(__idle_start!=0){var cpuIdle={'start':__idle_start,'end':(start-(50-tr))};cpuIdle.duration=cpuIdle.end-cpuIdle.start;if(cpuIdle.duration>=55){__ez.nap[5].push(cpuIdle);window["ezocfol"](start);}
+__idle_start=0;}}});},56);}else{window.dispatchEvent(new CustomEvent('EzoIvent',{detail:[-1,-1]}));clearInterval(window["ezoIint"]);}});if(typeof window["__ez"]["ssaf"]!="undefined"&&window["__ez"]["ssaf"].indexOf(16)>-1){window['addEventListener']("load",function(){window['__ez__w_load']=true;});window['addEventListener']("DOMContentLoaded",function(){window['__ez__w_dom']=true;});if(typeof window["__ez"]["sshsdef"]!=="undefined"&&window["__ez"]["sshsdef"]===false){(function(){if(Element.prototype.addEventListener){window["__ez__ael"]=window['addEventListener'];window["__ez__ael__proto"]=window["__ez__ael"].prototype;var addEventListener=function(){if(arguments[0].toLowerCase()=="domcontentloaded"){arguments[0]="EzoicDOMContentLoaded";}else if(arguments[0].toLowerCase()=="load"){arguments[0]="Ezoicload";}
+window["__ez__ael"].apply(window,arguments);}
+window["__ez__ael"].prototype=window["__ez__ael__proto"];window['addEventListener']=addEventListener;document['addEventListener']=addEventListener;}}());}}
+window['ezorqs']=ezorqs;window['ezorqe']=ezorqe;window['ezocfol']=ezocfol;window['ezogetrqbykey']=ezogetrqbykey;__ez['nap']=__ez.nap;</script>
+	
+	
+
+	<title>About Us – Seeders Media</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//s.w.org">
+
+
+<link rel="stylesheet" id="wp-block-library-css" href="https://www.seedersmedia.github.io/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-theme-css" href="https://www.seedersmedia.github.io/wp-includes/css/dist/block-library/theme.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="https://www.seedersmedia.github.io/wp-content/plugins/contact-form-7/includes/css/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="ezoic-integration-css" href="https://www.seedersmedia.github.io/wp-content/plugins/ezoic-integration/public/css/ezoic-integration-public.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="https://www.seedersmedia.github.io/wp-content/themes/oceanwp/assets/fonts/fontawesome/css/all.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="simple-line-icons-css" href="https://www.seedersmedia.github.io/wp-content/themes/oceanwp/assets/css/third/simple-line-icons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="magnific-popup-css" href="https://www.seedersmedia.github.io/wp-content/themes/oceanwp/assets/css/third/magnific-popup.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="slick-css" href="https://www.seedersmedia.github.io/wp-content/themes/oceanwp/assets/css/third/slick.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="oceanwp-style-css" href="https://www.seedersmedia.github.io/wp-content/themes/oceanwp/assets/css/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="oceanwp-google-font-poppins-css" href="//fonts.googleapis.com/css?family=Poppins%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%2C100i%2C200i%2C300i%2C400i%2C500i%2C600i%2C700i%2C800i%2C900i&subset=latin&ver=5.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-icons-css" href="https://www.seedersmedia.github.io/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-animations-css" href="https://www.seedersmedia.github.io/wp-content/plugins/elementor/assets/lib/animations/animations.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-frontend-css" href="https://www.seedersmedia.github.io/wp-content/plugins/elementor/assets/css/frontend.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-pro-css" href="https://www.seedersmedia.github.io/wp-content/plugins/elementor-pro/assets/css/frontend.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="jet-sticky-frontend-css" href="https://www.seedersmedia.github.io/wp-content/plugins/jetsticky-for-elementor/assets/css/jet-sticky-frontend.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-global-css" href="https://www.seedersmedia.github.io/wp-content/uploads/elementor/css/global.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-post-37-css" href="https://www.seedersmedia.github.io/wp-content/uploads/elementor/css/post-37.css" type="text/css" media="all">
+<link rel="stylesheet" id="oe-widgets-style-css" href="https://www.seedersmedia.github.io/wp-content/plugins/ocean-extra/assets/css/widgets.css" type="text/css" media="all">
+<link rel="stylesheet" id="google-fonts-1-css" href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CQuicksand%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&ver=5.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-icons-shared-0-css" href="https://www.seedersmedia.github.io/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-icons-fa-brands-css" href="https://www.seedersmedia.github.io/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min.css" type="text/css" media="all">
+<script type="text/javascript" src="https://www.seedersmedia.github.io/wp-includes/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="https://www.seedersmedia.github.io/wp-includes/js/jquery/jquery-migrate.min.js"></script>
+
+
+
+
+
+
+
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><link rel="icon" href="https://www.seedersmedia.github.io/wp-content/uploads/2020/04/cropped-Seeders-Logo-250-250-32x32.jpg" sizes="32x32">
+<link rel="icon" href="https://www.seedersmedia.github.io/wp-content/uploads/2020/04/cropped-Seeders-Logo-250-250-192x192.jpg" sizes="192x192">
+<link rel="apple-touch-icon" href="https://www.seedersmedia.github.io/wp-content/uploads/2020/04/cropped-Seeders-Logo-250-250-180x180.jpg">
+<meta name="msapplication-TileImage" content="https://www.seedersmedia.github.io/wp-content/uploads/2020/04/cropped-Seeders-Logo-250-250-270x270.jpg">
+
+<style type="text/css">
+/* General CSS */.page-header,.has-transparent-header .page-header{padding:0}/* Header CSS */#site-header.has-header-media .overlay-header-media{background-color:rgba(0,0,0,0.5)}#site-logo #site-logo-inner a img,#site-header.center-header #site-navigation-wrap .middle-site-logo a img{max-width:150px}.effect-one #site-navigation-wrap .dropdown-menu >li >a.menu-link >span:after,.effect-three #site-navigation-wrap .dropdown-menu >li >a.menu-link >span:after,.effect-five #site-navigation-wrap .dropdown-menu >li >a.menu-link >span:before,.effect-five #site-navigation-wrap .dropdown-menu >li >a.menu-link >span:after,.effect-nine #site-navigation-wrap .dropdown-menu >li >a.menu-link >span:before,.effect-nine #site-navigation-wrap .dropdown-menu >li >a.menu-link >span:after{background-color:#dd0000}.effect-four #site-navigation-wrap .dropdown-menu >li >a.menu-link >span:before,.effect-four #site-navigation-wrap .dropdown-menu >li >a.menu-link >span:after,.effect-seven #site-navigation-wrap .dropdown-menu >li >a.menu-link:hover >span:after,.effect-seven #site-navigation-wrap .dropdown-menu >li.sfHover >a.menu-link >span:after{color:#dd0000}.effect-seven #site-navigation-wrap .dropdown-menu >li >a.menu-link:hover >span:after,.effect-seven #site-navigation-wrap .dropdown-menu >li.sfHover >a.menu-link >span:after{text-shadow:10px 0 #dd0000,-10px 0 #dd0000}#site-navigation-wrap .dropdown-menu >li >a,.oceanwp-mobile-menu-icon a,#searchform-header-replace-close{color:#5e5e5e}#site-navigation-wrap .dropdown-menu >li >a:hover,.oceanwp-mobile-menu-icon a:hover,#searchform-header-replace-close:hover{color:#000000}#site-navigation-wrap .dropdown-menu >.current-menu-item >a,#site-navigation-wrap .dropdown-menu >.current-menu-ancestor >a,#site-navigation-wrap .dropdown-menu >.current-menu-item >a:hover,#site-navigation-wrap .dropdown-menu >.current-menu-ancestor >a:hover{color:#878787}.dropdown-menu .sub-menu{min-width:30px}/* Footer Widgets CSS */#footer-widgets{padding:30px 0 0 0}#footer-widgets{background-color:#ffffff}/* Footer Bottom CSS */#footer-bottom{background-color:#ffffff}/* Typography CSS */#site-navigation-wrap .dropdown-menu >li >a,#site-header.full_screen-header .fs-dropdown-menu >li >a,#site-header.top-header #site-navigation-wrap .dropdown-menu >li >a,#site-header.center-header #site-navigation-wrap .dropdown-menu >li >a,#site-header.medium-header #site-navigation-wrap .dropdown-menu >li >a,.oceanwp-mobile-menu-icon a{font-family:Poppins;font-weight:300;font-style:normal;font-size:15px;letter-spacing:2px}
+</style><script type="text/javascript">var ezouid = "1";</script><script type="text/javascript">
+var ezoTemplate = 'old_site_noads';
+if(typeof ezouid == 'undefined')
+{
+    var ezouid = 'none';
+}
+var ezoFormfactor = '1';
+var ezo_elements_to_check = Array();
+</script>
+<script data-ezscrex="false" type="text/javascript">
+var soc_app_id = '0';
+var did = 201366;
+var ezdomain = 'seedersmedia.com';
+var ezoicSearchable = 1;
+</script>
+
+
+<script data-ezscrex="false" type="text/javascript" data-cfasync="false">var _ezaq = {"ad_cache_level":0,"ad_lazyload_version":0,"city":"Los Angeles","country":"US","days_since_last_visit":-1,"domain_id":201366,"engaged_time_visit":0,"ezcache_level":0,"forensiq_score":-1,"form_factor_id":1,"framework_id":1,"is_return_visitor":false,"is_sitespeed":0,"last_page_load":"","last_pageview_id":"","lt_cache_level":0,"metro_code":803,"page_ad_positions":"","page_view_count":0,"page_view_id":"9cae899e-c1f7-45d5-7c9d-9dd8d7e3c15a","position_selection_id":0,"postal_code":"90009","pv_event_count":0,"response_time_orig":0,"serverid":"54.200.60.1:13288","state":"CA","t_epoch":1595139443,"template_id":120,"time_on_site_visit":0,"url":"https://www.seedersmedia.github.io/about-us/","user_id":0,"visit_uuid":"bf77b774-d591-4f63-4ef7-85d0268a0de5","word_count":344,"worst_bad_word_level":0};var _ezExtraQueries = "&ez_orig=1";</script><script data-ezscrex="false" data-cfasync="false" type="text/javascript">var ezWp = true;</script><script data-ezscrex="false" data-cfasync="false" type="text/javascript" src="//g.ezoic.net/detroitchicago/rochester.js?cb=188-0&v=9" async></script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="text/javascript"></script>
+<script data-ezscrex="false" data-pagespeed-no-defer data-cfasync="false">
+function create_ezolpl(pvID, rv) {
+    var d = new Date();
+    d.setTime(d.getTime() + (365*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    __ez.ck.setByCat("ezux_lpl_201366=" + new Date().getTime() + "|" + pvID + "|" + rv + "; " + expires, 3);
+}
+function attach_ezolpl(pvID, rv) {
+    if (document.readyState === "complete") {
+        create_ezolpl(pvID, rv);
+    }
+    if(window.attachEvent) {
+        window.attachEvent("onload", create_ezolpl, pvID, rv);
+    } else {
+        if(window.onload) {
+            var curronload = window.onload;
+            var newonload = function(evt) {
+                curronload(evt);
+                create_ezolpl(pvID, rv);
+            };
+            window.onload = newonload;
+        } else {
+            window.onload = create_ezolpl.bind(null, pvID, rv);
+        }
+    }
+}
+
+__ez.queue.addFunc("attach_ezolpl", "attach_ezolpl", ["9cae899e-c1f7-45d5-7c9d-9dd8d7e3c15a", "false"], false, ['/detroitchicago/boise.js'], true, false, false, false);
+</script></head>
+
+<body class="page-template page-template-elementor_header_footer page page-id-37 wp-embed-responsive oceanwp-theme sidebar-mobile no-header-border default-breakpoint has-sidebar content-right-sidebar page-header-disabled has-breadcrumbs elementor-default elementor-template-full-width elementor-kit-8 elementor-page elementor-page-37" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+
+	
+	
+	<div id="outer-wrap" class="site clr">
+
+		<a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+		
+		<div id="wrap" class="clr">
+
+			
+			
+			
+			<main id="main" class="site-main clr" role="main">
+
+						<div data-elementor-type="wp-page" data-elementor-id="37" class="elementor elementor-37" data-elementor-settings="[]">
+			<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+							<section class="elementor-element elementor-element-153a8c0 elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="153a8c0" data-element_type="section" data-settings='{"background_background":"classic","stretch_section":"section-stretched","sticky":"top","sticky_on":["desktop","tablet","mobile"],"sticky_offset":0,"sticky_effects_offset":0}'>
+						<div class="elementor-container elementor-column-gap-no">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-1901dc4 elementor-column elementor-col-33 elementor-top-column" data-id="1901dc4" data-element_type="column">
+			<div class="elementor-column-wrap">
+					<div class="elementor-widget-wrap">
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-dc69909 elementor-column elementor-col-33 elementor-top-column" data-id="dc69909" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-cffd556 elementor-widget elementor-widget-image" data-id="cffd556" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+											<a href="http://34.94.40.119/">
+							<img width="1500" height="1500" src="https://www.seedersmedia.github.io/wp-content/uploads/2020/04/Seeders-2.png" class="attachment-full size-full" alt="" srcset="https://www.seedersmedia.github.io/wp-content/uploads/2020/04/Seeders-2.png 1500w,https://www.seedersmedia.github.io/wp-content/uploads/2020/04/Seeders-2-300x300.png 300w,https://www.seedersmedia.github.io/wp-content/uploads/2020/04/Seeders-2-1024x1024.png 1024w,https://www.seedersmedia.github.io/wp-content/uploads/2020/04/Seeders-2-150x150.png 150w,https://www.seedersmedia.github.io/wp-content/uploads/2020/04/Seeders-2-768x768.png 768w" sizes="(max-width: 1500px) 100vw, 1500px">								</a>
+											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-8596403 elementor-column elementor-col-33 elementor-top-column" data-id="8596403" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-e705507 elementor-shape-circle elementor-widget__width-initial elementor-widget elementor-widget-social-icons" data-id="e705507" data-element_type="widget" data-widget_type="social-icons.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-social-icons-wrapper">
+							<a class="elementor-icon elementor-social-icon elementor-social-icon-linkedin elementor-repeater-item-deac42e" href="https://www.linkedin.com/company/seeders-media-llp/" target="_blank">
+					<span class="elementor-screen-only">Linkedin</span>
+					<i class="fab fa-linkedin"></i>				</a>
+							<a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-e5cf4a3" href="https://twitter.com/Seeders_Media" target="_blank">
+					<span class="elementor-screen-only">Twitter</span>
+					<i class="fab fa-twitter"></i>				</a>
+							<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-42c49b4" href="https://www.facebook.com/seeders.media/" target="_blank">
+					<span class="elementor-screen-only">Facebook</span>
+					<i class="fab fa-facebook"></i>				</a>
+							<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-adfe7b3" href="https://www.instagram.com/seeders.media/" target="_blank">
+					<span class="elementor-screen-only">Instagram</span>
+					<i class="fab fa-instagram"></i>				</a>
+					</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-612fd0ce elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="612fd0ce" data-element_type="section" data-settings='{"background_background":"classic","stretch_section":"section-stretched"}'>
+						<div class="elementor-container elementor-column-gap-no">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-a253c0b elementor-column elementor-col-100 elementor-top-column" data-id="a253c0b" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-7fdc66b7 elementor-widget elementor-widget-heading" data-id="7fdc66b7" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h1 class="elementor-heading-title elementor-size-large"><b>About us</b></h1>		</div>
+				</div>
+				<div class="elementor-element elementor-element-67a300c3 elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-id="67a300c3" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>We are a digital consulting firm with a core focus on revenue and a strong belief that Brand innovation comes not just by creating something transactional, but transformational. At Seeders, we not only position and market your brand with the right target audience but also help you drive revenue. We strongly believe that setting the foundation by studying market trends, sector dynamics and best practices is essential to harness the power of digital knowledge.<br>Based out of Gurgaon(Delhi NCR), we strike a balance between creative and technical with a focus on driving business value. A young team with industry experts, who place clients at the top of the pyramid.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-82d6c16 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="82d6c16" data-element_type="section" id="partnering" data-settings='{"background_background":"classic","stretch_section":"section-stretched"}'>
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-3571f67 elementor-column elementor-col-100 elementor-top-column" data-id="3571f67" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-a873b49 elementor-widget elementor-widget-heading" data-id="a873b49" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h1 class="elementor-heading-title elementor-size-large"><b>What you get by Partnering with us ?</b></h1>		</div>
+				</div>
+				<div class="elementor-element elementor-element-28441c4 elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-id="28441c4" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><ul><li>A partnership that will help you stay on top of your digital game united with a strong set of values.<br><br></li><li>A team that strives to continually evolve and innovate digital tools and delivering the right experience.<br><br></li><li>A transparent relationship, a long term opportunity to work with some of the most honest, talented, friendly people in the industry.</li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-ac19e64 elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="ac19e64" data-element_type="section" data-settings='{"stretch_section":"section-stretched"}'>
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-a573953 elementor-column elementor-col-100 elementor-top-column" data-id="a573953" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-3ce31fc elementor-widget elementor-widget-heading" data-id="3ce31fc" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Our Values</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-ddbe524 elementor-flip-box--3d elementor-widget__width-initial elementor-widget-tablet__width-initial elementor-flip-box--effect-flip elementor-flip-box--direction-up elementor-widget elementor-widget-flip-box" data-id="ddbe524" data-element_type="widget" data-widget_type="flip-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-flip-box">
+			<div class="elementor-flip-box__layer elementor-flip-box__front">
+				<div class="elementor-flip-box__layer__overlay">
+					<div class="elementor-flip-box__layer__inner">
+						
+													<h3 class="elementor-flip-box__layer__title">
+								Integrity							</h3>
+						
+											</div>
+				</div>
+			</div>
+			<div class="elementor-flip-box__layer elementor-flip-box__back">
+			<div class="elementor-flip-box__layer__overlay">
+				<div class="elementor-flip-box__layer__inner">
+					
+											<div class="elementor-flip-box__layer__description">
+							Integrity is our core value. For us, it signifies honesty, trust & moral principles and it gives us the foundation for whatever we do.						</div>
+					
+								</div>
+		</div>
+		</div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-9e3a4b6 elementor-widget__width-initial elementor-widget-tablet__width-initial elementor-flip-box--effect-flip elementor-flip-box--direction-up elementor-widget elementor-widget-flip-box" data-id="9e3a4b6" data-element_type="widget" data-widget_type="flip-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-flip-box">
+			<div class="elementor-flip-box__layer elementor-flip-box__front">
+				<div class="elementor-flip-box__layer__overlay">
+					<div class="elementor-flip-box__layer__inner">
+						
+													<h3 class="elementor-flip-box__layer__title">
+								Delivery							</h3>
+						
+											</div>
+				</div>
+			</div>
+			<div class="elementor-flip-box__layer elementor-flip-box__back">
+			<div class="elementor-flip-box__layer__overlay">
+				<div class="elementor-flip-box__layer__inner">
+					
+											<div class="elementor-flip-box__layer__description">
+							We are here to stay and we understand the only way to stay relevant is by delivering value to our partners.						</div>
+					
+								</div>
+		</div>
+		</div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-ddb753e elementor-widget__width-initial elementor-widget-tablet__width-initial elementor-flip-box--effect-flip elementor-flip-box--direction-up elementor-widget elementor-widget-flip-box" data-id="ddb753e" data-element_type="widget" data-widget_type="flip-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-flip-box">
+			<div class="elementor-flip-box__layer elementor-flip-box__front">
+				<div class="elementor-flip-box__layer__overlay">
+					<div class="elementor-flip-box__layer__inner">
+						
+													<h3 class="elementor-flip-box__layer__title">
+								Respect							</h3>
+						
+											</div>
+				</div>
+			</div>
+			<div class="elementor-flip-box__layer elementor-flip-box__back">
+			<div class="elementor-flip-box__layer__overlay">
+				<div class="elementor-flip-box__layer__inner">
+					
+											<div class="elementor-flip-box__layer__description">
+							Being respected by others in our lives teaches us how to be respectful toward others. Irrespective of the age, views, seniority or origin it signifies wellbeing, safety and happiness.						</div>
+					
+								</div>
+		</div>
+		</div>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-d4e5c3e elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="d4e5c3e" data-element_type="section" data-settings='{"stretch_section":"section-stretched","background_background":"classic"}'>
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-49e5803 elementor-column elementor-col-100 elementor-top-column" data-id="49e5803" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-82e4379 elementor-widget elementor-widget-heading" data-id="82e4379" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><b>Mission & Belief</b></h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-f472c68 elementor-widget elementor-widget-text-editor" data-id="f472c68" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>We work with MSMEs and empower them with digital ecosystems so they’re totally prepared to thrive in this millennial era. We believe in digital and we are digital. Digital is the best and only way to grow and connect in today’s ever-changing world. Moreover, it’s transparent and easily measurable.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-6068d383 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="6068d383" data-element_type="section" data-settings='{"background_background":"classic","stretch_section":"section-stretched"}'>
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-4e137c80 elementor-column elementor-col-100 elementor-top-column" data-id="4e137c80" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-3c6f43d9 elementor-widget elementor-widget-heading" data-id="3c6f43d9" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h3 class="elementor-heading-title elementor-size-large"><b>Meet the team that finds you solutions</b></h3>		</div>
+				</div>
+				<section class="elementor-element elementor-element-1d044730 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="1d044730" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-6de43aa4 elementor-column elementor-col-33 elementor-inner-column" data-id="6de43aa4" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-2d980fa elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="2d980fa" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="2560" height="1707" src="https://www.seedersmedia.github.io/wp-content/uploads/2020/04/IMG_2704-scaled.jpg" class="attachment-full size-full" alt="" srcset="https://www.seedersmedia.github.io/wp-content/uploads/2020/04/IMG_2704-scaled.jpg 2560w,https://www.seedersmedia.github.io/wp-content/uploads/2020/04/IMG_2704-300x200.jpg 300w,https://www.seedersmedia.github.io/wp-content/uploads/2020/04/IMG_2704-1024x683.jpg 1024w,https://www.seedersmedia.github.io/wp-content/uploads/2020/04/IMG_2704-768x512.jpg 768w,https://www.seedersmedia.github.io/wp-content/uploads/2020/04/IMG_2704-1536x1024.jpg 1536w,https://www.seedersmedia.github.io/wp-content/uploads/2020/04/IMG_2704-2048x1365.jpg 2048w" sizes="(max-width: 2560px) 100vw, 2560px"></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Shailendra Shetty</h3><p class="elementor-image-box-description">Co-Founder</p></div></div>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-516c7d6 elementor-column elementor-col-33 elementor-inner-column" data-id="516c7d6" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-3bfadd06 elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="3bfadd06" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="2560" height="1707" src="https://www.seedersmedia.github.io/wp-content/uploads/2020/04/IMG_2717-scaled.jpg" class="attachment-full size-full" alt="" srcset="https://www.seedersmedia.github.io/wp-content/uploads/2020/04/IMG_2717-scaled.jpg 2560w,https://www.seedersmedia.github.io/wp-content/uploads/2020/04/IMG_2717-300x200.jpg 300w,https://www.seedersmedia.github.io/wp-content/uploads/2020/04/IMG_2717-1024x683.jpg 1024w,https://www.seedersmedia.github.io/wp-content/uploads/2020/04/IMG_2717-768x512.jpg 768w,https://www.seedersmedia.github.io/wp-content/uploads/2020/04/IMG_2717-1536x1024.jpg 1536w,https://www.seedersmedia.github.io/wp-content/uploads/2020/04/IMG_2717-2048x1365.jpg 2048w" sizes="(max-width: 2560px) 100vw, 2560px"></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Manavdeep Singh</h3><p class="elementor-image-box-description">Founder</p></div></div>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-eaed453 elementor-column elementor-col-33 elementor-inner-column" data-id="eaed453" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-6c05701d elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="6c05701d" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="2560" height="1707" src="https://www.seedersmedia.github.io/wp-content/uploads/2020/04/IMG_2697-scaled.jpg" class="attachment-full size-full" alt="" srcset="https://www.seedersmedia.github.io/wp-content/uploads/2020/04/IMG_2697-scaled.jpg 2560w,https://www.seedersmedia.github.io/wp-content/uploads/2020/04/IMG_2697-300x200.jpg 300w,https://www.seedersmedia.github.io/wp-content/uploads/2020/04/IMG_2697-1024x683.jpg 1024w,https://www.seedersmedia.github.io/wp-content/uploads/2020/04/IMG_2697-768x512.jpg 768w,https://www.seedersmedia.github.io/wp-content/uploads/2020/04/IMG_2697-1536x1024.jpg 1536w,https://www.seedersmedia.github.io/wp-content/uploads/2020/04/IMG_2697-2048x1365.jpg 2048w" sizes="(max-width: 2560px) 100vw, 2560px"></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Karan Kumar Sahni</h3><p class="elementor-image-box-description">Co-Founder</p></div></div>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+		
+        </main>
+
+        
+        
+        
+            
+<footer id="footer" class="site-footer" itemscope="itemscope" itemtype="https://schema.org/WPFooter" role="contentinfo">
+
+    
+    <div id="footer-inner" class="clr">
+
+        
+
+<div id="footer-bottom" class="clr no-footer-nav">
+
+	
+	<div id="footer-bottom-inner" class="container clr">
+
+		
+		
+			<div id="copyright" class="clr" role="contentinfo">
+				Copyright 2020 - Seeders Media LLP			</div>
+
+		
+	</div>
+
+	
+</div>
+
+
+    </div>
+
+    
+</footer>
+        
+        
+    </div>
+
+    
+</div>
+
+
+
+<a id="scroll-top" class="scroll-top-right" href="#"><span class="fa fa-angle-up" aria-label="Scroll to the top of the page"></span></a>
+
+
+<div id="sidr-close">
+	<a href="#" class="toggle-sidr-close" aria-label="Close mobile Menu">
+		<i class="icon icon-close" aria-hidden="true"></i><span class="close-text">Close Menu</span>
+	</a>
+</div>
+    
+    
+<div id="mobile-menu-search" class="clr">
+	<form method="get" action="https://www.seedersmedia.github.io/" class="mobile-searchform" role="search" aria-label="Search for:">
+		<label for="ocean-mobile-search1">
+			<input type="search" name="s" autocomplete="off" placeholder="Search">
+			<button type="submit" class="searchform-submit" aria-label="Submit Search">
+				<i class="icon icon-magnifier" aria-hidden="true"></i>
+			</button>
+					</label>
+			</form>
+</div>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/www.seedersmedia.github.io\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.seedersmedia.github.io/wp-content/plugins/contact-form-7/includes/js/scripts.js"></script>
+<script type="text/javascript" src="https://www.seedersmedia.github.io/wp-includes/js/imagesloaded.min.js"></script>
+<script type="text/javascript" src="https://www.seedersmedia.github.io/wp-content/themes/oceanwp/assets/js/third/magnific-popup.min.js"></script>
+<script type="text/javascript" src="https://www.seedersmedia.github.io/wp-content/themes/oceanwp/assets/js/third/lightbox.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var oceanwpLocalize = {"isRTL":"","menuSearchStyle":"drop_down","sidrSource":"#sidr-close, #site-navigation, #mobile-menu-search","sidrDisplace":"1","sidrSide":"left","sidrDropdownTarget":"link","verticalHeaderTarget":"link","customSelects":".woocommerce-ordering .orderby, #dropdown_product_cat, .widget_categories select, .widget_archive select, .single-product .variations_form .variations select","ajax_url":"https:\/\/www.seedersmedia.github.io\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.seedersmedia.github.io/wp-content/themes/oceanwp/assets/js/main.min.js"></script>
+
+<script type="text/javascript" src="https://www.seedersmedia.github.io/wp-content/plugins/jetsticky-for-elementor/assets/js/lib/ResizeSensor.min.js"></script>
+<script type="text/javascript" src="https://www.seedersmedia.github.io/wp-content/plugins/jetsticky-for-elementor/assets/js/lib/sticky-sidebar/sticky-sidebar.min.js"></script>
+<script type="text/javascript" src="https://www.seedersmedia.github.io/wp-content/plugins/jetsticky-for-elementor/assets/js/lib/jsticky/jquery.jsticky.js"></script>
+<script type="text/javascript" src="https://www.seedersmedia.github.io/wp-content/plugins/elementor/assets/js/frontend-modules.min.js"></script>
+<script type="text/javascript" src="https://www.seedersmedia.github.io/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js"></script>
+<script type="text/javascript">
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/www.seedersmedia.github.io\/wp-admin\/admin-ajax.php","nonce":"509fc4756d","i18n":{"toc_no_headings_found":"No headings were found on this page."},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"google":{"title":"Google+","has_counter":true},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"delicious":{"title":"Delicious"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_GB","app_id":""}};
+</script>
+<script type="text/javascript" src="https://www.seedersmedia.github.io/wp-content/plugins/elementor-pro/assets/js/frontend.min.js"></script>
+<script type="text/javascript" src="https://www.seedersmedia.github.io/wp-includes/js/jquery/ui/position.min.js"></script>
+<script type="text/javascript" src="https://www.seedersmedia.github.io/wp-content/plugins/elementor/assets/lib/dialog/dialog.min.js"></script>
+<script type="text/javascript" src="https://www.seedersmedia.github.io/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js"></script>
+<script type="text/javascript" src="https://www.seedersmedia.github.io/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js"></script>
+<script type="text/javascript" src="https://www.seedersmedia.github.io/wp-content/plugins/elementor/assets/lib/share-link/share-link.min.js"></script>
+<script type="text/javascript">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","downloadImage":"Download image"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"version":"2.9.7","urls":{"assets":"https:\/\/www.seedersmedia.github.io\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"general":{"elementor_global_image_lightbox":"yes","elementor_lightbox_enable_counter":"yes","elementor_lightbox_enable_fullscreen":"yes","elementor_lightbox_enable_zoom":"yes","elementor_lightbox_enable_share":"yes","elementor_lightbox_title_src":"title","elementor_lightbox_description_src":"description"},"editorPreferences":[]},"post":{"id":37,"title":"About%20Us%20%E2%80%93%20Seeders%20Media","excerpt":"","featuredImage":false}};
+</script>
+<script type="text/javascript" src="https://www.seedersmedia.github.io/wp-content/plugins/elementor/assets/js/frontend.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var JetStickySettings = {"elements_data":{"sections":[],"columns":[]}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.seedersmedia.github.io/wp-content/plugins/jetsticky-for-elementor/assets/js/jet-sticky-frontend.js"></script>
+<script type="text/javascript" style="display:none;" async>
+__ez.queue.addFile('edmonton.php', '//g.ezoic.net/detroitchicago/edmonton.webp?a=a&cb=0&shcb=33', true, ['/detroitchicago/minneapolis.js'], true, false, false, false);
+__ez.queue.addFile('jellyfish.php', '//g.ezoic.net/porpoiseant/jellyfish.webp?a=a&cb=0&shcb=33', false, [], true, false, false, false);
+</script>
+
+<script>var _audins_dom="seedersmedia_com",_audins_did=201366;__ez.queue.addDelayFunc("audins.js","__ez.script.add", "//go.ezoic.net/detroitchicago/audins.js?cb=188-0");</script><noscript><div style="display:none;"><img src="//pixel.quantserve.com/pixel/p-31iz6hfFutd16.gif?labels=Domain.seedersmedia_com,DomainId.201366" border="0" height="1" width="1" alt="Quantcast"></div></noscript><noscript><img src="https://sb.scorecardresearch.com/p?c1=2&c2=20015427&cv=2.0&cj=1"></noscript>
+<script type="text/javascript" data-cfasync="false"></script></body>
+</html>
