@@ -1,4 +1,4 @@
-@font-face {font-family: eicons;src: url("../fonts/eicons.eot?5.6.2");src: url("../fonts/eicons.eot?5.6.2#iefix") format("embedded-opentype"),url("../fonts/eicons.woff2?5.6.2") format("woff2"),url("../fonts/eicons.woff?5.6.2") format("woff"),url("../fonts/eicons.ttf?5.6.2") format("truetype"),url("../fonts/eicons.svg?5.6.2#eicon") format("svg");font-weight: 400;font-style: normal;}
+@font-face {font-family: eicons;src: url("../fonts/eicons.eot?5.6.2");src: url("../fonts/eicons.eot?5.6.2#iefix") format("embedded-opentype"),url("fonts/eicons.woff2") format("woff2"),url("fonts/eicons.woff?5.6.2") format("woff"),url("../fonts/eicons.ttf?5.6.2") format("truetype"),url("../fonts/eicons.svg?5.6.2#eicon") format("svg");font-weight: 400;font-style: normal;}
 [class*=" eicon-"], [class^=eicon] {display: inline-block;font-family: eicons;font-size: inherit;font-weight: 400;font-style: normal;font-variant: normal;line-height: 1;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
 @keyframes a {0% {transform: rotate(0deg);}
 	to {transform: rotate(359deg);}}
@@ -25,7 +25,7 @@
 .eicon-elementor-square:before {content: "";}
 .eicon-pojome:before {content: "";}
 .eicon-plus:before {content: "";}
-.eicon-menu-bar:before {content: "";}
+.eicon-menu-bar:before {content:'\e816'}
 .eicon-apps:before {content: "";}
 .eicon-accordion:before {content: "";}
 .eicon-alert:before {content: "";}
@@ -63,9 +63,9 @@
 .eicon-info-box:before {content: "";}
 .eicon-inner-section:before {content: "";}
 .eicon-mailchimp:before {content: "";}
-.eicon-menu-card:before {content: "";}
-.eicon-navigation-horizontal:before {content: "";}
-.eicon-nav-menu:before {content: "";}
+.eicon-menu-card:before {content: "\e83c";}
+.eicon-navigation-horizontal:before {content: "\e83d";}
+.eicon-nav-menu:before {content: "\e83e";}
 .eicon-navigation-vertical:before {content: "";}
 .eicon-number-field:before {content: "";}
 .eicon-parallax:before {content: "";}
@@ -128,8 +128,8 @@
 .eicon-testimonial:before {content: "";}
 .eicon-counter-circle:before {content: "";}
 .eicon-person:before {content: "";}
-.eicon-chevron-right:before {content: "";}
-.eicon-chevron-left:before {content: "";}
+.eicon-chevron-right:before {content: ">";}
+.eicon-chevron-left:before {content: "<";}
 .eicon-close:before {content: "";}
 .eicon-file-download:before {content: "";}
 .eicon-save:before {content: "";}
